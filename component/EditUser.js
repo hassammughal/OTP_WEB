@@ -56,7 +56,7 @@ const EditUser = (props) => {
 
     const updateUser = async () => {
         if (validationSchema) {
-            const response = await axios.put('http://3.35.175.207:3001/home/ubuntu/OTP_WEB/OTP_WEB/api/userList', {
+            const response = await axios.put('http://localhost:3001/api/userList', {
                 _id:credentials._id,
                 studentName: credentials.studentName,
                 studentId: credentials.studentId,
@@ -85,7 +85,7 @@ const EditUser = (props) => {
     async function getCreds() {
 
         console.log(props.email + " Props email")
-        await fetch('http://3.35.175.207:3001/home/ubuntu/OTP_WEB/OTP_WEB/api/getCredentials', {
+        await fetch('http://localhost:3001/api/getCredentials', {
             headers: {
                 "Content-Type": "application/json",
             },
@@ -99,7 +99,7 @@ const EditUser = (props) => {
     useEffect(() => {
         async function getLevels() {
 
-            await fetch('http://3.35.175.207:3001/home/ubuntu/OTP_WEB/OTP_WEB/api/levels')
+            await fetch('http://localhost:3001/api/levels')
                 .then((response) => response.json())
                 .then((data) => setValue(data))
         }
