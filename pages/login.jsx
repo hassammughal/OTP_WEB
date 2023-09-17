@@ -45,7 +45,7 @@ const Login = ({ handleChange }) => {
     }
     // const router = useRouter()
     const login = async (values, props) => {
-        const response = await axios.post('http://localhost:3001/api/login/login',{
+        const response = await axios.post('http://3.35.175.207:3001/api/login/login',{
             email :  values.username,
             password: values.password
         })
