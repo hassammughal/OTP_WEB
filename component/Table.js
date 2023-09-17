@@ -39,14 +39,14 @@ export default function BasicTable() {
   };
  
   async function getData() {
-    await fetch('http://localhost:3001/api/userList')
+    await fetch('http://3.35.175.207:3001/api/userList')
       .then((response) => response.json())
       .then((data) => setValue(data))
   }
 
   async function handleActive(index) {
     console.log(value.data[index])
-    const response = await axios.post('http://localhost:3001/api/active', {
+    const response = await axios.post('http://3.35.175.207:3001/api/active', {
       status: !(value.data[index].status),
       studentId: value.data[index].studentId
     }).then({

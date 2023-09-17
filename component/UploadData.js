@@ -76,7 +76,7 @@ const CreateUserForm = (props) => {
             const location = await uploadFileToS3(file, bucketName, key);
             console.log(location)
             
-            const response = await axios.post('http://localhost:3001/api/content', {
+            const response = await axios.post('http://3.35.175.207:3001/api/content', {
                 filename: file.name,
                 student: student.studentName,
                 teacher: teacher.teacherName,
@@ -99,20 +99,20 @@ const CreateUserForm = (props) => {
 
 
         useEffect(() => {
-        fetch('http://localhost:3001/api/teachers')
+        fetch('http://3.35.175.207:3001/api/teachers')
             .then((response) => response.json())
             .then((data) => setValue(data))
     }, []);
 
 
     useEffect(() => {
-        fetch('http://localhost:3001/api/userList')
+        fetch('http://3.35.175.207:3001/api/userList')
             .then((response) => response.json())
             .then((data) => setValue1(data))
     }, []);
 
     useEffect(() => {
-        fetch('http://localhost:3001/api/levels')
+        fetch('http://3.35.175.207:3001/api/levels')
             .then((response) => response.json())
             .then((data) => setValue2(data))
     }, []);

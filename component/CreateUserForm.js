@@ -68,7 +68,7 @@ const CreateUserForm = (props) => {
     const handleSubmit = async () => {
 
 
-        const response = await axios.post('http://localhost:3001/api/userList', {
+        const response = await axios.post('http://3.35.175.207:3001/api/userList', {
             studentName: name,
             studentId: email,
             password: password,
@@ -95,7 +95,7 @@ const CreateUserForm = (props) => {
 
     useEffect(() => {
         async function getLevel() {
-            await fetch('http://localhost:3001/api/levels')
+            await fetch('http://3.35.175.207:3001/api/levels')
                 .then((response) => response.json())
                 .then((data) => setValue([...data.data]))
         }

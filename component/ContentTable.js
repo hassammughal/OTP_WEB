@@ -226,7 +226,7 @@ export default function ContentTable() {
   useEffect(() => {
    async function getData(){
       
-      await fetch('http://localhost:3001/api/content')
+      await fetch('http://3.35.175.207:3001/api/content')
       .then((response) => response.json())
       .then((data) => setValue(data))
     }
